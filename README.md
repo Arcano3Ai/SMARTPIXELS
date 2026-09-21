@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/img/og-preview.jpg" alt="Smart Pixels - Web Design, AI & Digital Growth" width="100%">
+  <img src="assets/img/logo-agente-web.jpg" alt="Agente Web - Web Design & Artificial Intelligence" width="300" style="border-radius: 20px;">
 </p>
 
-<h1 align="center">⚡ SMART PIXELS</h1>
+<h1 align="center">🤖 AGENTE WEB</h1>
 
 <p align="center">
-  <strong>Plataforma Web Premium, Inteligencia Artificial & Performance Growth</strong>
+  <strong>Plataforma Web Premium, Agentes de Inteligencia Artificial & Performance Growth</strong>
 </p>
 
 <p align="center">
@@ -18,13 +18,14 @@
 
 ## 🌟 Descripción General
 
-**Smart Pixels** es un ecosistema digital de alta fidelidad diseñado para marcas ambiciosas. Combina ingeniería de software moderna, diseño UI/UX de nivel enterprise, arquitectura de conversión psicológica (CRO) y automatización con IA.
+**Agente Web** es un ecosistema digital de alta fidelidad diseñado para marcas ambiciosas. Combina ingeniería de software moderna, diseño UI/UX de nivel enterprise, arquitectura de conversión psicológica (CRO) e integración de agentes autónomos con Inteligencia Artificial.
 
 ---
 
 ## 🚀 Módulos y Servicios
 
 - **Diseño Web Premium**: Sitios ultra rápidos con animaciones y microinteracciones de alta gama.
+- **Agentes Autónomos & IA**: Automatización inteligente de atención a clientes y procesos de negocio.
 - **Landing Pages de Alta Conversión**: Optimizadas para funnels publicitarios y A/B testing.
 - **SEO & Posicionamiento**: Arquitectura técnica y semántica con puntuaciones 95+ en Core Web Vitals.
 - **Performance Marketing**: Estrategias de captación y optimización de ROAS en Google & Meta Ads.
@@ -47,7 +48,10 @@ public_html/
 │   ├── seo.html
 │   ├── marketing.html
 │   ├── branding.html
-│   └── ecommerce.html
+│   ├── ecommerce.html
+│   ├── ia-automation.html
+│   ├── erp-crm.html
+│   └── ...
 ├── api/                    # Endpoints PHP para formularios y captura de leads
 │   ├── config.php
 │   ├── nominate.php
@@ -55,10 +59,12 @@ public_html/
 │   └── register.php
 ├── admin/                  # Panel administrativo
 ├── portal/                 # Portal de clientes
-├── assets/                 # Imágenes, videos y banner Open Graph
+├── assets/                 # Imágenes, videos y branding
 │   └── img/
-│       ├── og-preview.jpg  # Banner oficial Open Graph / WhatsApp
-│       ├── og-whatsapp.jpg # Miniatura optimizada WhatsApp (<100KB)
+│       ├── logo-agente-web.jpg # Nuevo Logo Oficial Agente Web
+│       ├── og-agente-web.jpg   # Banner oficial Open Graph / WhatsApp
+│       ├── eyyas.png
+│       ├── lula07.png
 │       └── mokka.mp4
 └── database.sql            # Esquema MySQL para almacenamiento de prospectos
 ```
@@ -75,5 +81,5 @@ public_html/
 ---
 
 <p align="center">
-  © 2026 <strong>Smart Pixels</strong> por <a href="https://github.com/Arcano3Ai">Arcano Solutions</a>. Todos los derechos reservados.
+  © 2026 <strong>Agente Web</strong> por <a href="https://github.com/Arcano3Ai">Arcano Solutions</a>. Todos los derechos reservados.
 </p>

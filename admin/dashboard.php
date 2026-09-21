@@ -27,7 +27,8 @@ if (!isset($_SESSION['logged_in'])) {
 
     <head>
         <meta charset="UTF-8">
-        <title>Arcano Admin Login</title>
+        <title>Agente Web Admin Login</title>
+        <link rel="icon" type="image/jpeg" href="../assets/img/logo-agente-web.jpg">
         <style>
             body {
                 background: #0a0a0c;
@@ -78,7 +79,7 @@ if (!isset($_SESSION['logged_in'])) {
 
     <body>
         <div class="login-box">
-            <h2>ARCANO ADMIN</h2>
+            <h2>AGENTE WEB ADMIN</h2>
             <?php if (isset($error))
                 echo "<p style='color:red'>$error</p>"; ?>
             <form method="POST">
@@ -106,7 +107,8 @@ $leads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
     <meta charset="UTF-8">
-    <title>Arcano Leads Dashboard</title>
+    <title>Agente Web Leads Dashboard</title>
+    <link rel="icon" type="image/jpeg" href="../assets/img/logo-agente-web.jpg">
     <style>
         body {
             background: #0a0a0c;

@@ -1,4 +1,4 @@
-name: Deploy Smart Pixels to GitHub Pages
+name: Deploy Agente Web to GitHub Pages
 
 on:
   push:

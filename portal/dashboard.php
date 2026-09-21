@@ -13,7 +13,8 @@ $role = $_SESSION['role'] ?? 'Cliente VIP';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Cliente | Arcano Solutions</title>
+    <title>Dashboard Cliente | Agente Web</title>
+    <link rel="icon" type="image/jpeg" href="../assets/img/logo-agente-web.jpg">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap"
         rel="stylesheet">
@@ -25,7 +26,7 @@ $role = $_SESSION['role'] ?? 'Cliente VIP';
 
     <!-- Sidebar -->
     <aside class="sidebar">
-        <a href="../index.html" class="logo">ARCANO<span class="dot">.</span></a>
+        <a href="../index.html" class="logo">Agente<span class="dot" style="color:#06b6d4;">Web</span></a>
 
         <nav class="nav-links">
             <a href="#" class="nav-item active"><i class="fas fa-chart-line"></i> Dashboard</a>
