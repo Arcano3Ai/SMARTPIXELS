@@ -45,31 +45,7 @@
     <!-- HUD Removed for standard modern feel -->
     <nav class="navbar">
         <a href="index_en.html" class="logo" aria-label="Agente Web - Home" style="text-decoration:none; color:white; display:flex; align-items:center; gap:8px;">
-            <span class="logo-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="16,2 29,9.5 29,22.5 16,30 3,22.5 3,9.5" stroke="url(#awG1_en)" stroke-width="2" fill="rgba(6, 182, 212, 0.08)" stroke-linejoin="round"/>
-                    <path d="M9 22L13.5 10L16 17L18.5 10L23 22" stroke="url(#awG3_en)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M11 18H15" stroke="url(#awG3_en)" stroke-width="1.8" stroke-linecap="round"/>
-                    <circle cx="16" cy="2" r="1.8" fill="#06b6d4"/>
-                    <circle cx="29" cy="9.5" r="1.8" fill="#3b82f6"/>
-                    <circle cx="29" cy="22.5" r="1.8" fill="#8b5cf6"/>
-                    <circle cx="16" cy="30" r="1.8" fill="#ec4899"/>
-                    <circle cx="3" cy="22.5" r="1.8" fill="#8b5cf6"/>
-                    <circle cx="3" cy="9.5" r="1.8" fill="#3b82f6"/>
-                    <defs>
-                        <linearGradient id="awG1_en" x1="3" y1="2" x2="29" y2="30" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#8b5cf6"/>
-                            <stop offset="0.5" stop-color="#3b82f6"/>
-                            <stop offset="1" stop-color="#06b6d4"/>
-                        </linearGradient>
-                        <linearGradient id="awG3_en" x1="9" y1="10" x2="23" y2="22" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#06b6d4"/>
-                            <stop offset="0.6" stop-color="#3b82f6"/>
-                            <stop offset="1" stop-color="#a855f7"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </span>
+            <img src="assets/img/logo-agente-web.jpg" alt="Logo Agente Web" style="width: 32px; height: 32px; border-radius: 8px; object-fit: cover; box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);">
             <span class="logo-text">Agente<span class="logo-accent">Web</span></span>
         </a>
         <div class="nav-links">
@@ -422,7 +398,10 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Agente<span class="logo-accent">Web</span></div>
+            <div class="footer-logo" style="display:flex; align-items:center; gap:8px;">
+                <img src="assets/img/logo-agente-web.jpg" alt="Logo Agente Web" style="width: 28px; height: 28px; border-radius: 6px; object-fit: cover;">
+                <span>Agente<span class="logo-accent">Web</span></span>
+            </div>
             <div class="footer-links">
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
@@ -431,7 +410,23 @@
         </div>
     </footer>
 
+    <!-- Background Ambient Audio -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/audio/ambient.mp3" type="audio/mp3">
+    </audio>
 
+    <!-- Floating Ambient Music Control -->
+    <div class="music-floating-wrap" id="music-wrap">
+        <button class="music-floating-toggle is-paused" id="music-toggle-btn" aria-label="Ambient music" title="Toggle ambient music">
+            <span class="music-bars" aria-hidden="true">
+                <span class="mbar"></span>
+                <span class="mbar"></span>
+                <span class="mbar"></span>
+                <span class="mbar"></span>
+            </span>
+            <span class="music-label">Music</span>
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>
