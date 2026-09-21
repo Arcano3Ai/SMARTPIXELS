@@ -428,4 +428,123 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    /* ========================================
+       9. PAGESPEED VIEW SWITCHER & LIGHTBOX MODAL
+       ======================================== */
+    const btnViewWeb = document.getElementById('btn-view-web');
+    const btnViewSpeed = document.getElementById('btn-view-speed');
+    const allPortCards = document.querySelectorAll('.port-card');
+    const psModal = document.getElementById('pagespeed-modal');
+    const psModalImg = document.getElementById('ps-modal-img');
+    const psModalTitle = document.getElementById('ps-modal-title');
+    const psModalClose = document.getElementById('ps-modal-close');
+
+    // Function to set card view (web or speed)
+    function setCardView(card, viewType) {
+        const tabBtns = card.querySelectorAll('.card-tab-btn');
+        const imgWeb = card.querySelector('.port-img-web');
+        const imgSpeed = card.querySelector('.port-img-speed');
+
+        tabBtns.forEach(btn => {
+            if (btn.getAttribute('data-card-view') === viewType) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        if (viewType === 'speed') {
+            if (imgWeb) imgWeb.classList.remove('active');
+            if (imgSpeed) imgSpeed.classList.add('active');
+        } else {
+            if (imgSpeed) imgSpeed.classList.remove('active');
+            if (imgWeb) imgWeb.classList.add('active');
+        }
+    }
+
+    // Global View Switcher handlers
+    if (btnViewWeb && btnViewSpeed) {
+        btnViewWeb.addEventListener('click', () => {
+            btnViewWeb.classList.add('active');
+            btnViewSpeed.classList.remove('active');
+            allPortCards.forEach(card => setCardView(card, 'web'));
+        });
+
+        btnViewSpeed.addEventListener('click', () => {
+            btnViewSpeed.classList.add('active');
+            btnViewWeb.classList.remove('active');
+            allPortCards.forEach(card => setCardView(card, 'speed'));
+        });
+    }
+
+    // Individual Card Tab Click Handlers
+    document.querySelectorAll('.card-tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const viewType = btn.getAttribute('data-card-view');
+            const card = btn.closest('.port-card');
+            if (card && viewType) {
+                setCardView(card, viewType);
+            }
+        });
+    });
+
+    // Lightbox Modal Open Function
+    function openPsModal(src, title) {
+        if (!psModal || !psModalImg) return;
+        psModalImg.src = src;
+        if (psModalTitle) {
+            const titleSpan = psModalTitle.querySelector('span');
+            if (titleSpan) {
+                titleSpan.textContent = title || 'Auditoría Oficial Google PageSpeed Insights';
+            }
+        }
+        psModal.classList.add('open');
+        psModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePsModal() {
+        if (!psModal) return;
+        psModal.classList.remove('open');
+        psModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            if (psModalImg) psModalImg.src = '';
+        }, 300);
+    }
+
+    // Click on elements that have data-lightbox (e.g. badges, speed images)
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-lightbox]');
+        if (target) {
+            e.preventDefault();
+            e.stopPropagation();
+            const src = target.getAttribute('data-lightbox');
+            const title = target.getAttribute('data-lightbox-title');
+            if (src) {
+                openPsModal(src, title);
+            }
+        }
+    });
+
+    // Modal Close Triggers
+    if (psModalClose) {
+        psModalClose.addEventListener('click', closePsModal);
+    }
+
+    if (psModal) {
+        psModal.addEventListener('click', (e) => {
+            if (e.target === psModal) {
+                closePsModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && psModal && psModal.classList.contains('open')) {
+            closePsModal();
+        }
+    });
 });
