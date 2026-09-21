@@ -379,82 +379,372 @@
     <!-- ======================== RESULTS / PORTFOLIO ======================== -->
     <section id="resultados" class="results-section">
         <div class="section-header reveal-up">
-            <span class="section-eyebrow">Casos de Éxito</span>
+            <span class="section-eyebrow">Portafolio & Casos Reales</span>
             <h2>Proyectos que <span class="gradient-text">hablan solos</span></h2>
-            <p>Resultados reales de marcas que apostaron por Agente Web.</p>
+            <p>Marcas e infraestructuras digitales organizadas según su paquete de inversión y visión de escala.</p>
         </div>
 
-        <div class="portfolio-grid">
-            <div class="port-card port-big reveal-up stagger-1">
-                <div class="port-img"
-                    style="background: url('assets/img/lula07.png') center center / cover no-repeat; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                </div>
-                <div class="port-info">
-                    <span class="port-tag">E-commerce</span>
-                    <h3>LULA</h3>
-                    <p>E-commerce boutique optimizado mobile-first con diseño premium y animaciones fluidas.</p>
-                    <div class="port-stats">
-                        <div class="ps-item"><span class="ps-val">+312%</span><span class="ps-lab">Ventas online</span>
-                        </div>
-                        <div class="ps-item"><span class="ps-val">0.9s</span><span class="ps-lab">Carga</span></div>
-                        <div class="ps-item"><span class="ps-val">4.8★</span><span class="ps-lab">UX Score</span></div>
-                    </div>
-                </div>
-            </div>
+        <!-- Portfolio Filter Tabs -->
+        <div class="portfolio-filters reveal-up" role="tablist" aria-label="Filtro de portafolio por paquete">
+            <button class="port-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                Todos <span class="filter-count">(10)</span>
+            </button>
+            <button class="port-filter-btn" data-filter="starter" role="tab" aria-selected="false">
+                Plan Starter · Presencia Digital
+            </button>
+            <button class="port-filter-btn highlight-growth" data-filter="growth" role="tab" aria-selected="false">
+                Plan Growth · "En Comienzo de Crecer"
+            </button>
+            <button class="port-filter-btn" data-filter="top" role="tab" aria-selected="false">
+                Plan Full 360° · TOP
+            </button>
+            <button class="port-filter-btn highlight-migration" data-filter="migration" role="tab" aria-selected="false">
+                ⚡ En Migración: Growth → TOP
+            </button>
+        </div>
 
-            <div class="port-card reveal-up stagger-2">
-                <div class="port-img"
-                    style="padding: 0; position: relative; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                    <video autoplay loop muted playsinline
-                        style="position: absolute; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0;">
-                        <source src="assets/img/mokka.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="port-info">
-                    <span class="port-tag">E-commerce</span>
-                    <h3>MOKKACHAI</h3>
-                    <p>E-commerce editorial de lujo minimalista.</p>
-                    <div class="port-stats">
-                        <div class="ps-item"><span class="ps-val">+450%</span><span class="ps-lab">Conversión
-                                online</span></div>
-                        <div class="ps-item"><span class="ps-val">1.1s</span><span class="ps-lab">Carga Media</span>
-                        </div>
+        <div class="portfolio-grid" id="portfolio-grid">
+            <!-- 1. Flagship Ecosistema Insignia -->
+            <div class="port-card port-big reveal-up stagger-1" data-category="top all" style="grid-column: 1 / -1;">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
                     </div>
-                </div>
-            </div>
-
-            <div class="port-card reveal-up stagger-3">
-                <div class="port-img"
-                    style="background: url('assets/img/eyyas.png') center top / cover no-repeat; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                </div>
-                <div class="port-info">
-                    <span class="port-tag">E-commerce</span>
-                    <h3>EYYA</h3>
-                    <p>Plataforma premium de belleza con enfoque en identidad visual.</p>
-                    <div class="port-stats">
-                        <div class="ps-item"><span class="ps-val">+210%</span><span class="ps-lab">Retención</span>
-                        </div>
-                        <div class="ps-item"><span class="ps-val">3sem</span><span class="ps-lab">Tiempo entrega</span>
-                        </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>agenteweb.mx</span>
                     </div>
+                    <a href="https://agenteweb.mx" target="_blank" rel="noopener" class="pbb-external" title="Visitar Agente Web Oficial">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
-            </div>
-
-            <!-- Flagship Project Card -->
-            <div class="port-card port-big reveal-up stagger-1" style="grid-column: 1 / -1;">
                 <div class="port-img flagship-logo-wrap"
-                    style="background: #030014; display: flex; align-items: center; justify-content: center; min-height: 440px; padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    style="background: #030014; display: flex; align-items: center; justify-content: center; min-height: 380px; padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1);">
                     <img src="assets/img/logo-agente-web.jpg" alt="Logo Oficial Agente Web" class="flagship-logo-img"
-                        style="max-width: 100%; max-height: 390px; width: auto; height: auto; object-fit: contain; border-radius: 16px; box-shadow: 0 0 35px rgba(6, 182, 212, 0.35); transition: transform 0.4s ease;">
+                        style="max-width: 100%; max-height: 340px; width: auto; height: auto; object-fit: contain; border-radius: 16px; box-shadow: 0 0 35px rgba(6, 182, 212, 0.35); transition: transform 0.4s ease;">
                 </div>
                 <div class="port-info">
-                    <span class="port-tag" style="background: rgba(147, 51, 234, 0.2); color: #c084fc; border: 1px solid rgba(147, 51, 234, 0.4);">⚡ Ecosistema Insignia</span>
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge top">⚡ Ecosistema Insignia · Full 360°</span>
+                        <span class="port-industry">AI & Web Development</span>
+                    </div>
                     <h3>Agente Web Digital Experience</h3>
                     <p>Arquitectura digital integral que combina desarrollo web reactivo, integración de agentes inteligentes y performance marketing de última generación.</p>
                     <div class="port-stats">
                         <div class="ps-item"><span class="ps-val">100/100</span><span class="ps-lab">Performance</span></div>
                         <div class="ps-item"><span class="ps-val">+420%</span><span class="ps-lab">Impacto Visual</span></div>
                         <div class="ps-item"><span class="ps-val">0.6s</span><span class="ps-lab">Velocidad</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Ocean Dream Cancún (En Migración Growth a TOP) -->
+            <div class="port-card port-big reveal-up stagger-2" data-category="migration growth top all" style="grid-column: 1 / -1;">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>oceandream.com.mx</span>
+                    </div>
+                    <a href="https://oceandream.com.mx" target="_blank" rel="noopener" class="pbb-external" title="Visitar Ocean Dream Cancún">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-oceandream.jpg" alt="Ocean Dream Cancún" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge badge-migration">
+                            <span class="live-dot-pulse"></span>
+                            ⚡ En Proceso de Migración: Plan Growth → Full 360° TOP
+                        </span>
+                        <span class="port-industry">Hotelería & Residencial de Playa</span>
+                    </div>
+                    <h3>Ocean Dream Cancún</h3>
+                    <p>Complejo hotelero y residencial de playa frente al mar en Cancún. Actualmente en proceso de migración de su plan Growth al ecosistema Full 360° TOP para integrar motor propio de reservaciones directas, sincronización con OTAs y agentes de asistencia automatizada a huéspedes 24/7.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+480%</span><span class="ps-lab">Reservas directas</span></div>
+                        <div class="ps-item"><span class="ps-val">0.6s</span><span class="ps-lab">Carga Media</span></div>
+                        <div class="ps-item"><span class="ps-val">Migración</span><span class="ps-lab">Growth → TOP</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Arcano Solutions (Plan Full 360°) -->
+            <div class="port-card reveal-up stagger-1" data-category="top all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>arcanosolutions.com</span>
+                    </div>
+                    <a href="https://arcanosolutions.com" target="_blank" rel="noopener" class="pbb-external" title="Visitar Arcano Solutions">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-arcano.jpg" alt="Arcano Solutions" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge top">Plan Full 360° · TOP</span>
+                        <span class="port-industry">Tech & Cloud Enterprise</span>
+                    </div>
+                    <h3>Arcano Solutions</h3>
+                    <p>Plataforma corporativa de ingeniería de software, arquitectura cloud y soluciones empresariales con agentes de IA y máxima resiliencia operativa.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">99.9%</span><span class="ps-lab">Uptime SLA</span></div>
+                        <div class="ps-item"><span class="ps-val">100/100</span><span class="ps-lab">Core Vitals</span></div>
+                        <div class="ps-item"><span class="ps-val">Full 360°</span><span class="ps-lab">Stack Cloud</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. PDF VUCEM (Plan Full 360°) -->
+            <div class="port-card reveal-up stagger-2" data-category="top all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>pdfvucem.com</span>
+                    </div>
+                    <a href="https://pdfvucem.com" target="_blank" rel="noopener" class="pbb-external" title="Visitar PDF VUCEM">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-pdfvucem.jpg" alt="PDF VUCEM" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge top">Plan Full 360° · TOP</span>
+                        <span class="port-industry">SaaS & Comercio Exterior</span>
+                    </div>
+                    <h3>PDF VUCEM</h3>
+                    <p>Software SaaS especializado en comercio exterior para agencias aduanales y operadores logísticos, con digitalización masiva y procesamiento de pedimentos en tiempo real.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+50K</span><span class="ps-lab">Docs / Mes</span></div>
+                        <div class="ps-item"><span class="ps-val">0.4s</span><span class="ps-lab">Procesamiento</span></div>
+                        <div class="ps-item"><span class="ps-val">24/7</span><span class="ps-lab">Disponibilidad</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. The Celebration (Plan Growth / "En Comienzo de Crecer") -->
+            <div class="port-card reveal-up stagger-1" data-category="growth all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>thecelebration.com.mx</span>
+                    </div>
+                    <a href="https://thecelebration.com.mx" target="_blank" rel="noopener" class="pbb-external" title="Visitar The Celebration">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-celebration.jpg" alt="The Celebration" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge growth">Plan Growth · "En Comienzo de Crecer"</span>
+                        <span class="port-industry">Salones & Eventos Exclusivos</span>
+                    </div>
+                    <h3>The Celebration</h3>
+                    <p>Sitio interactivo y cotizador inteligente para salones, banquetes y bodas de alta gama. Embudos visuales de conversión y posicionamiento local optimizado.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+310%</span><span class="ps-lab">Cotizaciones</span></div>
+                        <div class="ps-item"><span class="ps-val">4.9★</span><span class="ps-lab">UX Score</span></div>
+                        <div class="ps-item"><span class="ps-val">Growth</span><span class="ps-lab">Funnels Activos</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. EyYa Beauty (Plan Growth / "En Comienzo de Crecer") -->
+            <div class="port-card reveal-up stagger-2" data-category="growth all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>eyyabeauty.com</span>
+                    </div>
+                    <a href="https://eyyabeauty.com" target="_blank" rel="noopener" class="pbb-external" title="Visitar EyYa Beauty">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-eyyabeauty.jpg" alt="EyYa Beauty" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge growth">Plan Growth · "En Comienzo de Crecer"</span>
+                        <span class="port-industry">E-commerce & Cosmética</span>
+                    </div>
+                    <h3>EyYa Beauty</h3>
+                    <p>Tienda online boutique con diseño editorial y checkout mobile-first de máxima velocidad. Enfoque integral en identidad visual, recurrencia y experiencia de compra.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+210%</span><span class="ps-lab">Retención</span></div>
+                        <div class="ps-item"><span class="ps-val">1.0s</span><span class="ps-lab">Carga Móvil</span></div>
+                        <div class="ps-item"><span class="ps-val">Growth</span><span class="ps-lab">E-commerce</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Talentico (Plan Growth / "En Comienzo de Crecer") -->
+            <div class="port-card reveal-up stagger-3" data-category="growth all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>talentico.com.mx</span>
+                    </div>
+                    <a href="https://talentico.com.mx" target="_blank" rel="noopener" class="pbb-external" title="Visitar Talentico">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-talentico.jpg" alt="Talentico" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge growth">Plan Growth · "En Comienzo de Crecer"</span>
+                        <span class="port-industry">Capital Humano & Reclutamiento</span>
+                    </div>
+                    <h3>Talentico</h3>
+                    <p>Portal corporativo de atracción de talento y consultoría en recursos humanos B2B, diseñado para captación de clientes corporativos y procesamiento ágil de vacantes.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+400%</span><span class="ps-lab">Prospección B2B</span></div>
+                        <div class="ps-item"><span class="ps-val">0.7s</span><span class="ps-lab">Velocidad</span></div>
+                        <div class="ps-item"><span class="ps-val">Growth</span><span class="ps-lab">Captación B2B</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Grupo Modalidad 40 (Plan Starter) -->
+            <div class="port-card reveal-up stagger-1" data-category="starter all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>grupomodalidad40.com.mx</span>
+                    </div>
+                    <a href="https://grupomodalidad40.com.mx" target="_blank" rel="noopener" class="pbb-external" title="Visitar Grupo Modalidad 40">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-modalidad40.jpg" alt="Grupo Modalidad 40" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge starter">Plan Starter · Presencia Digital</span>
+                        <span class="port-industry">Asesoría en Pensiones IMSS</span>
+                    </div>
+                    <h3>Grupo Modalidad 40</h3>
+                    <p>Plataforma de asesoría en pensiones IMSS diseñada con enfoque estricto en credibilidad, contacto directo por WhatsApp y conversión de prospectos calificados.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+350%</span><span class="ps-lab">Leads Calificados</span></div>
+                        <div class="ps-item"><span class="ps-val">0.9s</span><span class="ps-lab">Carga Veloz</span></div>
+                        <div class="ps-item"><span class="ps-val">Starter</span><span class="ps-lab">Presencia Pro</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Siconstrucam (Plan Starter) -->
+            <div class="port-card reveal-up stagger-2" data-category="starter all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>siconstrucam.com.mx</span>
+                    </div>
+                    <a href="https://siconstrucam.com.mx" target="_blank" rel="noopener" class="pbb-external" title="Visitar Siconstrucam">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-siconstrucam.jpg" alt="Siconstrucam" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge starter">Plan Starter · Presencia Digital</span>
+                        <span class="port-industry">Construcción & Maquinaria Pesada</span>
+                    </div>
+                    <h3>Siconstrucam</h3>
+                    <p>Presencia institucional sólida para empresa de construcción, obras civiles y renta de maquinaria pesada, con catálogo claro de maquinaria y cotizaciones B2B.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+240%</span><span class="ps-lab">Cotizaciones B2B</span></div>
+                        <div class="ps-item"><span class="ps-val">1.1s</span><span class="ps-lab">Carga Media</span></div>
+                        <div class="ps-item"><span class="ps-val">Starter</span><span class="ps-lab">Presencia Pro</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Psicóloga Jovita (Plan Starter) -->
+            <div class="port-card reveal-up stagger-3" data-category="starter all">
+                <div class="port-browser-bar">
+                    <div class="pbb-dots">
+                        <span class="pbb-dot pbb-red"></span>
+                        <span class="pbb-dot pbb-yellow"></span>
+                        <span class="pbb-dot pbb-green"></span>
+                    </div>
+                    <div class="pbb-url">
+                        <i class="fas fa-lock"></i>
+                        <span>psicologajovita.com</span>
+                    </div>
+                    <a href="https://psicologajovita.com" target="_blank" rel="noopener" class="pbb-external" title="Visitar Psicóloga Jovita">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="port-img-wrap">
+                    <img src="assets/img/port-jovita.jpg" alt="Psicóloga Jovita" loading="lazy" class="port-screenshot">
+                </div>
+                <div class="port-info">
+                    <div class="port-meta-header">
+                        <span class="port-plan-badge starter">Plan Starter · Presencia Digital</span>
+                        <span class="port-industry">Psicología Clínica & Bienestar</span>
+                    </div>
+                    <h3>Psicóloga Jovita</h3>
+                    <p>Sitio profesional cálido y accesible para consulta psicológica clínica. Optimizado para transmitir confianza médica y facilitar el agendamiento ágil de pacientes.</p>
+                    <div class="port-stats">
+                        <div class="ps-item"><span class="ps-val">+180%</span><span class="ps-lab">Citas Agendadas</span></div>
+                        <div class="ps-item"><span class="ps-val">0.8s</span><span class="ps-lab">Velocidad</span></div>
+                        <div class="ps-item"><span class="ps-val">Starter</span><span class="ps-lab">Presencia Pro</span></div>
                     </div>
                 </div>
             </div>

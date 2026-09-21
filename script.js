@@ -391,4 +391,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load Three / Particles
     // Check if we want to run the 2d context fallback (we do, for performance)
     setupParticles();
+
+    /* ========================================
+       8. PORTFOLIO FILTER TABS
+       ======================================== */
+    const filterBtns = document.querySelectorAll('.port-filter-btn');
+    const portCards = document.querySelectorAll('#portfolio-grid .port-card');
+
+    if (filterBtns.length && portCards.length) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetFilter = btn.getAttribute('data-filter');
+
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                portCards.forEach(card => {
+                    const categories = (card.getAttribute('data-category') || '').split(' ');
+                    if (targetFilter === 'all' || categories.includes(targetFilter)) {
+                        card.classList.remove('port-hidden');
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 20);
+                    } else {
+                        card.classList.add('port-hidden');
+                    }
+                });
+            });
+        });
+    }
 });
