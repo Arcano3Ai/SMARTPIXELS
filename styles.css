@@ -2800,3 +2800,192 @@ footer::before {
     transform: scale(1.03);
     box-shadow: 0 0 50px rgba(6, 182, 212, 0.55);
 }
+
+/* ============================================
+   REALISTIC SHOWCASE UI ENHANCEMENTS
+   ============================================ */
+.hero-showcase-wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 44px auto 10px;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-showcase-card {
+    position: relative;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #090818;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(6, 182, 212, 0.25), 0 0 80px rgba(124, 58, 237, 0.2);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+}
+
+.hero-showcase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.9), 0 0 65px rgba(6, 182, 212, 0.4), 0 0 100px rgba(124, 58, 237, 0.35);
+}
+
+.hero-showcase-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-showcase-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(3, 0, 20, 0.7) 0%, transparent 40%, rgba(3, 0, 20, 0.2) 100%);
+    pointer-events: none;
+}
+
+.hero-showcase-pill {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: var(--r-full);
+    background: rgba(13, 12, 29, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.pill-top-left {
+    top: 20px;
+    left: 20px;
+    border-color: rgba(6, 182, 212, 0.4);
+}
+
+.pill-top-left i {
+    color: var(--tertiary);
+}
+
+.pill-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.pill-bottom-right i {
+    color: #34d399;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 10px #34d399;
+    animation: pulse-ring 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .hero-showcase-wrapper {
+        margin-top: 30px;
+    }
+
+    .hero-showcase-pill {
+        position: static;
+        margin: 10px auto;
+        display: flex;
+        width: fit-content;
+        font-size: 0.75rem;
+    }
+
+    .pill-top-left, .pill-bottom-right {
+        position: absolute;
+        padding: 6px 12px;
+        font-size: 0.72rem;
+    }
+
+    .pill-top-left {
+        top: 10px;
+        left: 10px;
+    }
+
+    .pill-bottom-right {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Agente Web 360 Visual Showcase */
+.p360-visual-showcase {
+    width: 440px;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.p360-img-card {
+    position: relative;
+    border-radius: 28px;
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    background: #080714;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 45px rgba(6, 182, 212, 0.3), 0 0 60px rgba(124, 58, 237, 0.25);
+    transition: transform 0.5s ease;
+}
+
+.p360-img-card:hover {
+    transform: scale(1.02);
+}
+
+.p360-featured-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.p360-img-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 60%, rgba(3, 0, 20, 0.6) 100%);
+}
+
+.p360-floating-metric {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--r-full);
+    background: rgba(13, 12, 29, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.pfm-1 {
+    top: -15px;
+    left: 20px;
+    border-color: rgba(6, 182, 212, 0.5);
+    color: var(--tertiary);
+}
+
+.pfm-2 {
+    bottom: -15px;
+    right: 20px;
+    border-color: rgba(16, 185, 129, 0.5);
+    color: #34d399;
+}
