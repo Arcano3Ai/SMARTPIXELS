@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Primary SEO -->
     <title>Agente Web | Sitios Web de Alto Rendimiento & IA</title>
@@ -908,6 +908,49 @@
             <p>Sin letras pequeñas, sin sorpresas. Elige el plan que mejor se ajusta a tu etapa de crecimiento.</p>
         </div>
 
+        <!-- Banner Destacado Oferta Web Estática -->
+        <div class="pricing-promo-banner reveal-up" id="pricing-promo-banner">
+            <div class="ppb-glow" aria-hidden="true"></div>
+            <div class="ppb-content">
+                <div class="ppb-header-tag">
+                    <span class="ppb-live-pulse" aria-hidden="true"></span>
+                    <span>⚡ OFERTA LIMITADA • WEB ESTÁTICA</span>
+                </div>
+                <div class="ppb-body">
+                    <div class="ppb-left">
+                        <h3 class="ppb-title">Plan Especial: Web Estática Profesional</h3>
+                        <p class="ppb-desc">Obtén presencia digital inmediata de alto impacto con todas las herramientas para captar clientes desde el primer día.</p>
+                        <div class="ppb-tags">
+                            <span class="ppb-tag"><i class="fas fa-check"></i> Presentación profesional</span>
+                            <span class="ppb-tag"><i class="fas fa-check"></i> Servicios & citas</span>
+                            <span class="ppb-tag"><i class="fas fa-check"></i> WhatsApp directo</span>
+                            <span class="ppb-tag"><i class="fas fa-check"></i> Google Maps</span>
+                            <span class="ppb-tag"><i class="fas fa-check"></i> 100% Celular</span>
+                        </div>
+                    </div>
+                    <div class="ppb-right">
+                        <div class="ppb-price-block">
+                            <span class="ppb-was-price"><del>$4,999</del> MXN</span>
+                            <div class="ppb-deal-price">
+                                <span class="ppb-cur">$</span>
+                                <span class="ppb-num">2,999</span>
+                                <span class="ppb-iso">MXN</span>
+                            </div>
+                            <span class="ppb-save-badge">¡Ahorras $2,000 MXN!</span>
+                        </div>
+                        <div class="ppb-actions">
+                            <button type="button" class="btn-primary ppb-btn-view" id="btn-open-promo-banner">
+                                <i class="fas fa-bolt"></i> Ver Todo lo Incluido
+                            </button>
+                            <a href="tel:+528121912778" class="ppb-call-btn">
+                                <i class="fas fa-phone-alt"></i> 81 2191 2778
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="pricing-grid">
             <!-- Plan Starter -->
             <div class="pricing-card reveal-up stagger-1" id="plan-starter">
@@ -1171,6 +1214,229 @@
             <p class="footer-made">Hecho con <span aria-label="amor">❤️</span> en México 🇲🇽</p>
         </div>
     </footer>
+
+    <!-- ======================== FLOATING PROMO TRIGGER ======================== -->
+    <button type="button" class="promo-floating-trigger" id="promo-floating-trigger" aria-label="Ver oferta especial web estática por $2,999 MXN" title="Oferta especial $2,999 MXN">
+        <span class="promo-trigger-pulse" aria-hidden="true"></span>
+        <span class="promo-trigger-badge">OFERTA</span>
+        <span class="promo-trigger-text">Web Estática <strong>$2,999</strong> <del>$4,999</del></span>
+    </button>
+
+    <!-- ======================== MODAL OFERTA WEB ESTÁTICA ======================== -->
+    <div class="promo-modal-backdrop" id="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promo-modal-title" aria-hidden="true">
+        <div class="promo-modal-card">
+            <button type="button" class="promo-modal-close" id="promo-modal-close" aria-label="Cerrar ventana de oferta">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+
+            <!-- Encabezado Oferta -->
+            <div class="promo-modal-header">
+                <div class="promo-flash-badge">
+                    <span class="live-dot" aria-hidden="true"></span>
+                    <span>⚡ PROMO EXCLUSIVA LIMITADA</span>
+                </div>
+                <h2 id="promo-modal-title" class="promo-modal-title">
+                    Plan Oferta: <span class="gradient-text">Web Estática</span>
+                </h2>
+                <p class="promo-modal-subtitle">
+                    Presencia digital profesional, ultra rápida y optimizada para convertir prospectos en clientes reales desde el primer día.
+                </p>
+                <div class="promo-modal-pricing">
+                    <div class="promo-p-old">Antes: <del>$4,999 MXN</del></div>
+                    <div class="promo-p-current">
+                        <span class="promo-p-curr">$</span>
+                        <span class="promo-p-val">2,999</span>
+                        <span class="promo-p-coin">MXN</span>
+                        <span class="promo-p-type">/ Pago Único</span>
+                    </div>
+                    <div class="promo-p-discount">
+                        <i class="fas fa-tag"></i> ¡Ahorras $2,000 MXN de inmediato!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Características Incluidas -->
+            <div class="promo-modal-body">
+                <h3 class="promo-includes-title">
+                    <i class="fas fa-check-double"></i> Todo lo que incluye tu sitio web:
+                </h3>
+                <div class="promo-features-grid">
+                    <!-- 1. Presentación profesional -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon"><i class="fas fa-award"></i></div>
+                        <div class="pfc-content">
+                            <h4>Presentación profesional</h4>
+                            <p>Estructura moderna de alta gama con identidad corporativa sólida que genera confianza instantánea.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Servicios y consultas -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">🃏</div>
+                        <div class="pfc-content">
+                            <h4>Servicios y consultas</h4>
+                            <p>Catálogo y descripción clara de tus servicios o especialidades con llamadas a la acción estratégicas.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Agenda o solicitud de citas -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">📅</div>
+                        <div class="pfc-content">
+                            <h4>Agenda o solicitud de citas</h4>
+                            <p>Módulo interactivo para que tus prospectos puedan programar o solicitar citas fácilmente.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. WhatsApp y redes sociales -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">📲</div>
+                        <div class="pfc-content">
+                            <h4>WhatsApp y redes sociales</h4>
+                            <p>Conexión directa en un toque a tu WhatsApp de negocios y perfiles de Instagram, Facebook y más.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Ubicación y Google Maps -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">📍</div>
+                        <div class="pfc-content">
+                            <h4>Ubicación y Google Maps</h4>
+                            <p>Mapa interactivo integrado con tu dirección física para que tus clientes lleguen sin complicaciones.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Testimonios -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">⭐</div>
+                        <div class="pfc-content">
+                            <h4>Testimonios</h4>
+                            <p>Bloque de prueba social y opiniones de clientes que multiplica la credibilidad y el cierre de ventas.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Fotografías y videos -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">📸</div>
+                        <div class="pfc-content">
+                            <h4>Fotografías y videos</h4>
+                            <p>Galería multimedia optimizada para cargar a velocidad relámpago con alta resolución.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Diseño para celular -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">📱</div>
+                        <div class="pfc-content">
+                            <h4>Diseño para celular</h4>
+                            <p>Arquitectura 100% responsiva (Mobile-First), diseñada para verse y operar impecable en smartphones.</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Blog y contenido -->
+                    <div class="promo-feature-card">
+                        <div class="pfc-icon pfc-emoji">📝</div>
+                        <div class="pfc-content">
+                            <h4>Blog y contenido</h4>
+                            <p>Sección de artículos o noticias para compartir novedades, consejos y mejorar tu presencia digital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer / Canales de Conversión con Teléfono -->
+            <div class="promo-modal-footer">
+                <div class="promo-footer-prompt">
+                    <span>Aprovecha esta tarifa especial antes de que termine:</span>
+                </div>
+                <div class="promo-cta-buttons">
+                    <a href="tel:+528121912778" class="promo-cta-btn promo-btn-phone" id="btn-promo-call" aria-label="Llamar al 81 2191 2778">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <span class="pbtn-top">Llamar a un asesor</span>
+                            <span class="pbtn-main">81 2191 2778</span>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/528121912778?text=Hola%2C%20quiero%20aprovechar%20la%20oferta%20del%20Plan%20Web%20Est%C3%A1tica%20de%20%242%2C999%20MXN" target="_blank" rel="noopener" class="promo-cta-btn promo-btn-wa" id="btn-promo-wa" aria-label="Apartar oferta por WhatsApp al 81 2191 2778">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <span class="pbtn-top">Respuesta inmediata</span>
+                            <span class="pbtn-main">Apartar por WhatsApp</span>
+                        </div>
+                    </a>
+                </div>
+                <p class="promo-footnote">
+                    <i class="fas fa-shield-alt"></i> Entrega rápida garantizada • Asesoría personalizada • Sin mensualidades forzosas
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== WIDGET WHATSAPP & BOT ASISTENTE ======================== -->
+    <div class="quick-assist-widget" id="quick-assist-widget">
+        <!-- Chatbot Window -->
+        <div class="faq-bot-window" id="faq-bot-window" aria-hidden="true" role="dialog" aria-label="Asistente Virtual Agente Web">
+            <div class="bot-header">
+                <div class="bot-avatar-group">
+                    <div class="bot-avatar-icon">
+                        <i class="fas fa-robot"></i>
+                        <span class="bot-online-badge" aria-hidden="true"></span>
+                    </div>
+                    <div class="bot-header-info">
+                        <strong>Agente Web Bot</strong>
+                        <span class="bot-status-text">Asistente en línea 24/7</span>
+                    </div>
+                </div>
+                <div class="bot-header-actions">
+                    <button type="button" class="bot-close-btn" id="bot-close-btn" aria-label="Cerrar chat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bot-messages-container" id="bot-messages">
+                <div class="bot-msg bot-msg-bot">
+                    <div class="bot-bubble">
+                        ¡Hola! 👋 Soy el asistente de <strong>Agente Web</strong>. ¿En qué te puedo ayudar hoy? Selecciona una duda frecuente o escríbeme abajo.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sugerencias Rápidas -->
+            <div class="bot-quick-chips" id="bot-quick-chips">
+                <button type="button" class="bot-chip" data-query="oferta">🔥 Oferta $2,999</button>
+                <button type="button" class="bot-chip" data-query="paquetes">📦 Ver Paquetes</button>
+                <button type="button" class="bot-chip" data-query="tiempos">⏱️ Tiempos de entrega</button>
+                <button type="button" class="bot-chip" data-query="hosting">🌐 Hosting y Dominio</button>
+                <button type="button" class="bot-chip" data-query="pagos">💳 Formas de Pago</button>
+                <button type="button" class="bot-chip" data-query="humano">💬 Hablar por WhatsApp</button>
+            </div>
+
+            <!-- Input de Chat -->
+            <form class="bot-input-bar" id="bot-form">
+                <input type="text" id="bot-input" placeholder="Escribe tu duda sobre diseño web..." autocomplete="off" aria-label="Escribe tu mensaje">
+                <button type="submit" class="bot-send-btn" id="bot-send-btn" aria-label="Enviar mensaje">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Botones Flotantes (WhatsApp + Bot) -->
+        <div class="floating-assist-buttons">
+            <!-- Botón WhatsApp -->
+            <a href="https://wa.me/528121912778?text=Hola,%20tengo%20dudas%20sobre%20sus%20paquetes%20de%20dise%C3%B1o%20web" target="_blank" rel="noopener" class="float-wa-btn" id="float-wa-btn" aria-label="Abrir WhatsApp directo con Agente Web" title="Escríbenos a WhatsApp">
+                <span class="float-wa-pulse" aria-hidden="true"></span>
+                <i class="fab fa-whatsapp"></i>
+                <span class="float-wa-tooltip">WhatsApp 81 2191 2778</span>
+            </a>
+
+            <!-- Botón Bot de Dudas -->
+            <button type="button" class="float-bot-toggle-btn" id="float-bot-toggle-btn" aria-label="Abrir chat de preguntas y respuestas" title="Dudas de diseño web">
+                <span class="float-bot-badge">FAQ</span>
+                <i class="fas fa-comment-dots"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
