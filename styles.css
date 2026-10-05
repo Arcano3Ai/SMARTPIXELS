@@ -2004,17 +2004,30 @@ h4 {
     align-items: flex-start;
     gap: 12px;
     font-size: 0.95rem;
+    line-height: 1.5;
     color: #e2e8f0;
+    text-align: left;
+}
+
+.pc-features li i {
+    flex-shrink: 0;
+    margin-top: 3px;
+    font-size: 0.95rem;
+    width: 16px;
+    text-align: center;
+}
+
+.pc-features li span {
+    flex: 1;
+    display: inline;
 }
 
 .pc-features i.fa-check {
     color: #10b981;
-    margin-top: 4px;
 }
 
 .pc-features i.fa-star {
     color: var(--accent);
-    margin-top: 4px;
 }
 
 .pc-feat-off {
