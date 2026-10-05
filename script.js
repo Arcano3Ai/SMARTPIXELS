@@ -606,14 +606,15 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
-        if (q.includes('paquete') || q.includes('planes') || q.includes('starter') || q.includes('growth') || q.includes('360') || q.includes('precio') || q.includes('costo')) {
+        if (q.includes('paquete') || q.includes('planes') || q.includes('basico') || q.includes('estandar') || q.includes('enterprise') || q.includes('full') || q.includes('precio') || q.includes('costo')) {
             return {
-                text: '💼 <strong>Nuestros Paquetes Principales:</strong><br><br>' +
-                      '1️⃣ <strong>Web Estática (Promo):</strong> $2,999 MXN (Antes $4,999). Ideal para negocios y servicios que buscan presencia profesional rápida.<br>' +
-                      '2️⃣ <strong>Starter:</strong> $8,500 MXN. Sitio hasta 5 páginas, UI/UX a medida, analítica y SEO básico.<br>' +
-                      '3️⃣ <strong>Growth:</strong> $18,500 MXN/mes. Landing pages ilimitadas, SEO técnico, Google Ads y Meta Ads.<br>' +
-                      '4️⃣ <strong>Full 360°:</strong> Ecosistema integral a la medida, e-commerce, branding y soporte 24/7.',
-                actions: '<a href="#precios" class="bot-btn-action" onclick="document.getElementById(\'faq-bot-window\').classList.remove(\'active\')"><i class="fas fa-list"></i> Ver tabla comparativa</a>'
+                text: '💼 <strong>Nuestros Paquetes Web (Todos incluyen Dominio y Hospedaje por 1 año):</strong><br><br>' +
+                      '⚡ <strong>Plan Oferta Web Mini:</strong> $2,999 MXN (Antes $4,999). 5 secciones estáticas, 5 correos, WhatsApp y mapas.<br>' +
+                      '1️⃣ <strong>Paquete Básico:</strong> $5,500 MXN + IVA. 10 secciones HTML5, hasta 150 correos POP3, SEO y analítica.<br>' +
+                      '2️⃣ <strong>Paquete Estándar (Popular):</strong> $10,500 MXN + IVA. 15 secciones, 3 catálogos autoadministrables, redes sociales.<br>' +
+                      '3️⃣ <strong>Paquete Enterprise:</strong> $15,500 MXN + IVA. 100% autoadministrable, 5 catálogos, 2 apps extras, Google Ads.<br>' +
+                      '4️⃣ <strong>Paquete Full E-Commerce:</strong> $20,500 MXN + IVA. Tienda virtual completa, pagos en línea, inventario y correos ilimitados.',
+                actions: '<a href="#precios" class="bot-btn-action" onclick="document.getElementById(\'faq-bot-window\').classList.remove(\'active\')"><i class="fas fa-list"></i> Ver tabla comparativa</a> <button type="button" class="bot-btn-action" data-open-promo><i class="fas fa-gift"></i> Ver Oferta $2,999</button>'
             };
         }
 
