@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- SEO & Indexation Control -->
+    <title>404 - Página no encontrada | Agente Web</title>
+    <meta name="description" content="La página que buscas no existe o ha sido movida. Regresa a Agente Web para explorar nuestros servicios de diseño web e inteligencia artificial.">
+    <!-- CRÍTICO PARA GOOGLE SEARCH CONSOLE: Evitar indexación de URLs rotas -->
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/jpeg" href="/assets/img/logo-agente-web.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agenteweb.com.mx/404.html">
+    <meta property="og:title" content="404 - Página no encontrada | Agente Web">
+    <meta property="og:description" content="La página solicitada no está disponible. Regresa al sitio oficial de Agente Web.">
+    <meta property="og:image" content="https://agenteweb.com.mx/assets/img/og-preview.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#030014">
+
+    <style>
+        :root {
+            --bg-color: #030014;
+            --card-bg: rgba(13, 10, 35, 0.75);
+            --border-glow: rgba(168, 85, 247, 0.3);
+            --primary: #a855f7;
+            --primary-glow: #06b6d4;
+            --accent: #ec4899;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-main: 'Outfit', sans-serif;
+            --font-code: 'Space Grotesk', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient glowing background */
+        .ambient-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-1 {
+            top: -100px;
+            left: -100px;
+            background: #7928ca;
+        }
+
+        .glow-2 {
+            bottom: -100px;
+            right: -100px;
+            background: #0070f3;
+        }
+
+        .glow-3 {
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ff0080;
+            opacity: 0.12;
+            width: 600px;
+            height: 600px;
+        }
+
+        /* Top Nav */
+        header {
+            position: relative;
+            z-index: 10;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .brand-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .brand-badge {
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #c084fc;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-family: var(--font-code);
+            font-weight: 600;
+        }
+
+        .nav-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-phone:hover {
+            color: #22c55e;
+        }
+
+        /* 404 Main Container */
+        main {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            max-width: 720px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .error-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 28px;
+            padding: 3.5rem 2.5rem;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(168, 85, 247, 0.15);
+            width: 100%;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #f87171;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-pill .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+            box-shadow: 0 0 10px #ef4444;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .glitch-code {
+            font-size: clamp(5.5rem, 15vw, 8.5rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #ffffff 10%, #a855f7 50%, #06b6d4 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 0 35px rgba(168, 85, 247, 0.4);
+            user-select: none;
+        }
+
+        h1 {
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.2rem;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Action Buttons */
+        .actions-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.85rem 1.6rem;
+            border-radius: 14px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.45);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px -5px rgba(168, 85, 247, 0.6);
+            background: linear-gradient(135deg, #b86bf9 0%, #8b5cf6 100%);
+        }
+
+        .btn-promo {
+            background: rgba(236, 72, 153, 0.12);
+            border: 1px solid rgba(236, 72, 153, 0.4);
+            color: #f472b6;
+        }
+
+        .btn-promo:hover {
+            background: rgba(236, 72, 153, 0.2);
+            transform: translateY(-2px);
+            color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.35);
+        }
+
+        .btn-whatsapp {
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: #4ade80;
+        }
+
+        .btn-whatsapp:hover {
+            background: rgba(34, 197, 94, 0.22);
+            transform: translateY(-2px);
+            color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.35);
+        }
+
+        /* Banner Oferta Compacto */
+        .promo-highlight {
+            margin-top: 2rem;
+            padding: 1rem 1.25rem;
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px dashed rgba(168, 85, 247, 0.3);
+            border-radius: 14px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .promo-highlight strong {
+            color: #22c55e;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 10;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 1.2rem 1rem;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .error-card {
+                padding: 2.5rem 1.25rem;
+            }
+
+            .actions-wrap {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ambient glowing spheres -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="/" class="brand-link" title="Ir al Inicio de Agente Web">
+            <img src="/assets/img/logo-agente-web.jpg" alt="Logo Agente Web" class="brand-logo">
+            <span>Agente Web</span>
+            <span class="brand-badge">IA & WEB</span>
+        </a>
+
+        <a href="tel:+528121912778" class="nav-phone" title="Llamar a soporte">
+            <i class="fa-solid fa-phone"></i>
+            <span>(81) 2191-2778</span>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="error-card">
+            <div class="status-pill">
+                <span class="dot"></span>
+                <span>ERROR 404 &bull; COORDENADAS DESCONOCIDAS</span>
+            </div>
+
+            <div class="glitch-code">404</div>
+
+            <h1>¡Ups! Esta página no existe o fue reubicada</h1>
+
+            <p>
+                El enlace que seguiste no se encuentra en nuestros servidores o ha cambiado de dirección. 
+                No te preocupes, puedes volver a la página principal o consultar nuestros paquetes disponibles.
+            </p>
+
+            <div class="actions-wrap">
+                <a href="/" class="btn btn-primary" id="btn-home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Volver al Inicio</span>
+                </a>
+
+                <a href="/#pricing" class="btn btn-promo" id="btn-offer">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>Ver Planes & Oferta $2,999</span>
+                </a>
+
+                <a href="https://wa.me/528121912778?text=Hola%20Agente%20Web%2C%20estaba%20navegando%20y%20me%20apareci%C3%B3%20un%20error%20404.%20%C2%BFMe%20pueden%20apoyar%3F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" id="btn-whatsapp-404">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Soporte</span>
+                </a>
+            </div>
+
+            <div class="promo-highlight">
+                <i class="fa-solid fa-sparkles" style="color: #ec4899;"></i>
+                <span>¿Buscabas crear tu sitio web? Plan Estático con 9 inclusiones de <s>$4,999</s> a solo <strong>$2,999 MXN</strong>.</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Agente Web &bull; Arcano Solutions. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

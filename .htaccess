@@ -20,8 +20,9 @@
     </IfModule>
 </FilesMatch>
 
-# 3. PREVENIR LISTADO DE DIRECTORIOS
+# 3. PREVENIR LISTADO DE DIRECTORIOS Y PÁGINA 404 PERSONALIZADA
 Options -Indexes
+ErrorDocument 404 /404.html
 
 # 4. HEADERS DE SEGURIDAD
 <IfModule mod_headers.c>
