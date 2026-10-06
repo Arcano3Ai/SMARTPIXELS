@@ -1,0 +1,17 @@
+# ==============================================================================
+# Robots.txt - Agente Web (https://agenteweb.com.mx)
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /services/
+
+# Proteger áreas administrativas y privadas
+Disallow: /admin/
+Disallow: /portal/
+Disallow: /api/
+Disallow: /database.sql
+
+# Rastreo de Sitemap
+Sitemap: https://agenteweb.com.mx/sitemap.xml
