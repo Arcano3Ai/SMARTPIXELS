@@ -166,9 +166,10 @@ h4 {
 
 .gradient-text {
     background: linear-gradient(135deg, var(--tertiary) 0%, var(--primary) 40%, var(--secondary) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     background-size: 200% 200%;
     animation: gradient-shift 6s ease infinite;
 }
@@ -202,6 +203,7 @@ h4 {
     border: 1px solid rgba(236, 72, 153, 0.25);
     border-radius: var(--r-full);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .section-eyebrow::before {
@@ -225,7 +227,6 @@ h4 {
         pointer-events: none;
         z-index: 9999;
         border-radius: 50%;
-        mix-blend-mode: difference;
     }
 
     .cursor-dot {
@@ -402,6 +403,7 @@ h4 {
     color: #fff;
     border: 1px solid var(--border-light);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-secondary:hover {
@@ -430,7 +432,9 @@ h4 {
    HERO
    ============================================ */
 .hero {
+    min-height: 100vh;
     min-height: 100svh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -454,21 +458,27 @@ h4 {
 .hero-grid-overlay {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     /* Isometric grid perspective */
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
+    -webkit-transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
     transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
     opacity: 0.3;
 }
 
 .glow-orb {
     position: absolute;
-    filter: blur(100px);
+    filter: blur(80px);
+    -webkit-filter: blur(80px);
     pointer-events: none;
     border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.45;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .glow-violet {
@@ -477,7 +487,6 @@ h4 {
     background: var(--primary);
     top: 10%;
     left: 20%;
-    mix-blend-mode: screen;
     animation: float-1 12s infinite alternate;
 }
 
@@ -487,7 +496,6 @@ h4 {
     background: var(--tertiary);
     bottom: 10%;
     right: 10%;
-    mix-blend-mode: screen;
     animation: float-2 15s infinite alternate;
 }
 
@@ -497,7 +505,6 @@ h4 {
     background: var(--secondary);
     top: 50%;
     left: 60%;
-    mix-blend-mode: screen;
     animation: float-3 10s infinite alternate;
 }
 
@@ -541,6 +548,7 @@ h4 {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     font-size: 0.85rem;
     font-weight: 600;
     color: #fff;
@@ -1868,11 +1876,18 @@ h4 {
    ============================================ */
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-    max-width: 1360px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1400px;
     margin: 0 auto;
     align-items: stretch;
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 860px;
+    }
 }
 
 .pricing-card {
@@ -2178,6 +2193,8 @@ select {
     font-family: var(--font-body);
     font-size: 1rem;
     transition: all 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 input:focus,
@@ -2189,6 +2206,8 @@ select:focus {
 }
 
 select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -2419,6 +2438,7 @@ footer::before {
         right: 0;
         transform: translateX(100%);
         width: min(320px, 85vw);
+        height: 100vh;
         height: 100svh;
         height: 100dvh;
         background: rgba(10, 6, 32, 0.98);
@@ -3486,8 +3506,11 @@ footer::before {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    padding: calc(env(safe-area-inset-top, 20px) + 10px) calc(env(safe-area-inset-right, 20px) + 10px) calc(env(safe-area-inset-bottom, 20px) + 10px) calc(env(safe-area-inset-left, 20px) + 10px);
     opacity: 0;
     pointer-events: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -3501,11 +3524,13 @@ footer::before {
     width: 100%;
     max-width: 860px;
     max-height: 92vh;
+    margin: auto;
     background: linear-gradient(145deg, rgba(16, 11, 44, 0.98), rgba(7, 4, 25, 0.99));
     border: 1px solid rgba(124, 58, 237, 0.4);
     border-radius: var(--r-xl);
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 60px rgba(124, 58, 237, 0.3);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     display: flex;
     flex-direction: column;
     transform: scale(0.92) translateY(20px);
@@ -3706,6 +3731,10 @@ footer::before {
     font-size: 1.15rem;
 }
 
+.pfc-content {
+    min-width: 0;
+}
+
 .pfc-content h4 {
     font-size: 0.92rem;
     font-weight: 700;
@@ -3718,6 +3747,8 @@ footer::before {
     color: var(--text-muted);
     line-height: 1.4;
     margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .promo-modal-footer {
@@ -3848,8 +3879,8 @@ footer::before {
    ========================================================================== */
 .quick-assist-widget {
     position: fixed;
-    right: 24px;
-    bottom: 24px;
+    right: max(20px, env(safe-area-inset-right, 20px));
+    bottom: max(20px, env(safe-area-inset-bottom, 20px));
     z-index: 995;
     display: flex;
     flex-direction: column;
@@ -4059,6 +4090,7 @@ footer::before {
 .bot-messages-container {
     flex: 1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 16px;
     display: flex;
     flex-direction: column;
