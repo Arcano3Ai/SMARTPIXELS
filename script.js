@@ -257,31 +257,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // Capturar datos del formulario
+            const nameVal = contactForm.querySelector('#contact-name')?.value.trim() || '';
+            const emailVal = contactForm.querySelector('#contact-email')?.value.trim() || '';
+            const companyVal = contactForm.querySelector('#contact-company')?.value.trim() || '';
+            const serviceSelect = contactForm.querySelector('#contact-service');
+            const serviceVal = (serviceSelect && serviceSelect.selectedIndex >= 0) ? serviceSelect.options[serviceSelect.selectedIndex]?.text : '';
+            const budgetSelect = contactForm.querySelector('#contact-budget');
+            const budgetVal = (budgetSelect && budgetSelect.value && budgetSelect.selectedIndex >= 0) ? budgetSelect.options[budgetSelect.selectedIndex]?.text : 'Por definir';
+
+            // Armar mensaje directo para WhatsApp
+            let waMsg = `¡Hola Agente Web! Quiero solicitar una propuesta para mi proyecto:\n\n` +
+                        `👤 *Nombre:* ${nameVal}\n` +
+                        `📧 *Email:* ${emailVal}\n`;
+            if (companyVal) {
+                waMsg += `🏢 *Empresa:* ${companyVal}\n`;
+            }
+            if (serviceVal) {
+                waMsg += `🚀 *Servicio:* ${serviceVal}\n`;
+            }
+            if (budgetVal && budgetVal !== 'Por definir') {
+                waMsg += `💰 *Presupuesto:* ${budgetVal}\n`;
+            }
+            waMsg += `\nQuedo atento a su respuesta para cotizar.`;
+
+            const waUrl = `https://wa.me/528121912778?text=${encodeURIComponent(waMsg)}`;
+
             // UI Loading state
             submitBtn.classList.add('loading');
-            
+
+            // Guardar silenciosamente en segundo plano sin interrumpir la experiencia
             try {
                 const formData = new FormData(contactForm);
-                const response = await fetch('api/nominate.php', {
+                fetch('api/nominate.php', {
                     method: 'POST',
                     body: formData
-                });
-                
-                const resData = await response.json().catch(() => null);
-                
-                if (response.ok && (!resData || resData.status !== 'error')) {
-                    showToast(resData?.message || 'Propuesta solicitada con éxito. Nos pondremos en contacto pronto.', 'success');
-                    contactForm.reset();
-                } else {
-                    showToast(resData?.message || 'Hubo un error al enviar tu solicitud. Intenta nuevamente.', 'error');
-                }
+                }).catch(() => null);
             } catch (err) {
-                // Fallback amigable si la base de datos aún no está configurada
-                showToast('Solicitud recibida. Te responderemos en breve.', 'success');
-                contactForm.reset();
-            } finally {
-                submitBtn.classList.remove('loading');
+                // Silencioso
             }
+
+            showToast('¡Abriendo WhatsApp para atenderte de inmediato!', 'success');
+
+            setTimeout(() => {
+                contactForm.reset();
+                submitBtn.classList.remove('loading');
+                // Abrir chat de WhatsApp
+                window.open(waUrl, '_blank') || (window.location.href = waUrl);
+            }, 500);
         });
     }
 
