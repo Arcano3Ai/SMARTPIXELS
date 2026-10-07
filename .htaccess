@@ -9,8 +9,8 @@
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# 2. PROTEGER ARCHIVOS SENSIBLES Y BASE DE DATOS
-<FilesMatch "^(database\.sql|config\.php|\.env|\.git|\.gitignore|LEEME.*\.md|README\.md)$">
+# 2. PROTEGER ARCHIVOS SENSIBLES, BACKUPS Y BASE DE DATOS
+<FilesMatch "(\.(sql|zip|tar|gz|bak|log|env.*|md)$|config\.php|leads_backup\.json|^\.git)">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>

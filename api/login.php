@@ -15,6 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    if ($pdo === null) {
+        echo json_encode(["status" => "error", "message" => "El portal de clientes está en mantenimiento temporal. Contáctanos por WhatsApp."]);
+        exit;
+    }
+
     try {
         $stmt = $pdo->prepare("SELECT id, full_name, password_hash, role FROM users WHERE email = ?");
         $stmt->execute([$email]);

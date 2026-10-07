@@ -98,9 +98,34 @@ if (!isset($_SESSION['logged_in'])) {
 // SI ESTÁ LOGUEADO, MOSTRAR DASHBOARD
 require_once '../api/config.php';
 
-// Obtener leads
-$stmt = $pdo->query("SELECT * FROM leads ORDER BY created_at DESC");
-$leads = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$leads = [];
+$dbConnected = ($pdo !== null);
+
+// 1. Obtener leads de Base de Datos si está conectada
+if ($dbConnected) {
+    try {
+        $stmt = $pdo->query("SELECT * FROM leads ORDER BY created_at DESC");
+        $leads = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $dbConnected = false;
+    }
+}
+
+// 2. Cargar leads de archivo de respaldo (si existen)
+$backupFiles = [__DIR__ . '/../data/leads_backup.json', __DIR__ . '/../api/leads_backup.json'];
+foreach ($backupFiles as $bf) {
+    if (file_exists($bf)) {
+        $content = @file_get_contents($bf);
+        $decoded = json_decode($content, true);
+        if (is_array($decoded)) {
+            foreach ($decoded as $item) {
+                // Agregar si no está ya en la lista
+                $item['interest'] = ($item['interest'] ?? 'General') . ' (Backup)';
+                $leads[] = $item;
+            }
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -192,6 +217,13 @@ $leads = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h1>Leads Recibidos</h1>
             <a href="?logout" class="btn-logout">Cerrar Sesión</a>
         </header>
+
+        <?php if (!$dbConnected): ?>
+            <div style="background: rgba(255, 180, 0, 0.15); border: 1px solid #ffb400; color: #ffb400; padding: 12px 18px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem;">
+                <strong>⚠️ Base de Datos MySQL desconectada o pendiente de configurar en <code>api/config.php</code>.</strong>
+                <br>El sistema está capturando leads en modo de emergencia mediante respaldo local y correo para que ningún cliente se pierda.
+            </div>
+        <?php endif; ?>
 
         <table>
             <thead>

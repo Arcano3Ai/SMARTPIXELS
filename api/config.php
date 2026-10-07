@@ -6,11 +6,18 @@ $dbname = "u123456789_arcano_db"; // Cambia esto
 $username = "u123456789_admin";   // Cambia esto
 $password = "TuPasswordSeguro123!"; // Cambia esto
 
+$pdo = null;
+$dbError = null;
+
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
 } catch (PDOException $e) {
-    // En producción, no mostrar el error real al usuario
-    die(json_encode(["status" => "error", "message" => "Error de conexión a BD."]));
+    // Si la BD falla o no esta configurada, no abortamos inmediatamente con die()
+    // para permitir que los endpoints ejecuten mecanismos de rescate/fallback.
+    $pdo = null;
+    $dbError = $e->getMessage();
 }
 ?>

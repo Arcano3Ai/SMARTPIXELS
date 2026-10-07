@@ -16,6 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    if ($pdo === null) {
+        echo json_encode(["status" => "error", "message" => "El registro está en mantenimiento temporal. Contáctanos por WhatsApp."]);
+        exit;
+    }
+
     // Hash password
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
