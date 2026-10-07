@@ -7,6 +7,10 @@ desktop.ini
 *.env
 *.env.local
 *.log
+config.local.php
+api/config.local.php
+data/
+leads_backup.json
 
 # IDE & Editor files
 .vscode/
