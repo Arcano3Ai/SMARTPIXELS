@@ -631,12 +631,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (q.includes('paquete') || q.includes('planes') || q.includes('basico') || q.includes('estandar') || q.includes('enterprise') || q.includes('full') || q.includes('precio') || q.includes('costo')) {
             return {
-                text: '💼 <strong>Nuestros Paquetes Web (Todos incluyen Dominio y Hospedaje por 1 año):</strong><br><br>' +
-                      '⚡ <strong>Plan Oferta Web Mini:</strong> $2,999 MXN (Antes $4,999). 5 secciones estáticas, 5 correos, WhatsApp y mapas.<br>' +
-                      '1️⃣ <strong>Paquete Básico:</strong> $5,500 MXN + IVA. 10 secciones HTML5, hasta 150 correos POP3, SEO y analítica.<br>' +
+                text: '💼 <strong>Nuestros Paquetes Web (Todos incluyen Dominio, Hospedaje y SSL por 1 año):</strong><br><br>' +
+                      '⚡ <strong>Plan Oferta Web Mini:</strong> $2,999 MXN (Antes $4,999). 5 secciones estáticas, WhatsApp y mapas.<br>' +
+                      '1️⃣ <strong>Paquete Básico:</strong> $5,500 MXN + IVA. 10 secciones HTML5, SSL, SEO y analítica.<br>' +
                       '2️⃣ <strong>Paquete Estándar (Popular):</strong> $10,500 MXN + IVA. 15 secciones, 3 catálogos autoadministrables, redes sociales.<br>' +
-                      '3️⃣ <strong>Paquete Enterprise:</strong> $15,500 MXN + IVA. 100% autoadministrable, 5 catálogos, 2 apps extras, Google Ads.<br>' +
-                      '4️⃣ <strong>Paquete Full E-Commerce:</strong> $20,500 MXN + IVA. Tienda virtual completa, pagos en línea, inventario y correos ilimitados.',
+                      '3️⃣ <strong>Paquete Enterprise:</strong> $15,500 MXN + IVA. 100% autoadministrable, 5 catálogos, 2 apps extras, SEO avanzado.<br>' +
+                      '4️⃣ <strong>Paquete Full E-Commerce:</strong> $20,500 MXN + IVA. Tienda virtual completa, pagos en línea, inventario y soporte 24/7.',
                 actions: '<a href="#precios" class="bot-btn-action" onclick="document.getElementById(\'faq-bot-window\').classList.remove(\'active\')"><i class="fas fa-list"></i> Ver tabla comparativa</a> <button type="button" class="bot-btn-action" data-open-promo><i class="fas fa-gift"></i> Ver Oferta $2,999</button>'
             };
         }
